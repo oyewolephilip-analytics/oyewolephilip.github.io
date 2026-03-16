@@ -44,12 +44,17 @@ OVER (PARTITION BY SYMBOL ORDER BY DATE_VAL)
 AS DAILY_RETURN
 FROM RAW_STOCK_DATA;
 
+```markdown
+## Sample Output
+
+![Snowflake Risk Analysis](images/snowflake-risk-analysis.png)
+
 ## Key Insight
 
-By monitoring daily return flunctuations, analysts can identify volatility spikes and potential market risk exposure.
+Monitoring daily return flunctuations allows analysts to identify volatility spikes and potential market risk exposure early.
 
 ## Author
 
-Oyewole Philip
-
+**Oyewole Philip**
 Risk-Focused Data Analyst
+Excel • SQL • Python • Power BI • Snowflake
