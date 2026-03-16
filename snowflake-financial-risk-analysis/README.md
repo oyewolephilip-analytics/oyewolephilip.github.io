@@ -43,3 +43,13 @@ LAG(CLOSE_PRICE)
 OVER (PARTITION BY SYMBOL ORDER BY DATE_VAL)
 AS DAILY_RETURN
 FROM RAW_STOCK_DATA;
+
+## Key Insight
+
+By monitoring daily return flunctuations, analysts can identify volatility spikes and potential market risk exposure.
+
+## Author
+
+Oyewole Philip
+
+Risk-Focused Data Analyst
