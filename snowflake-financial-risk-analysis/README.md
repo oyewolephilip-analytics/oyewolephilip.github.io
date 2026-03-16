@@ -32,17 +32,24 @@ Risk categories were created to classify volatility exposure.
 ## Example Snowflake Query
 
 ```sql
-SELECT
-DATE_VAL,
-SYMBOL,
-CLOSE_PRICE,
-(CLOSE_PRICE - LAG(CLOSE_PRICE)
-OVER (PARTITION BY SYMBOL ORDER BY DATE_VAL))
-/
-LAG(CLOSE_PRICE)
-OVER (PARTITION BY SYMBOL ORDER BY DATE_VAL)
-AS DAILY_RETURN
-FROM RAW_STOCK_DATA;
+WITH Tagged_Data AS (
+    SELECT 
+        DATE_VAL,
+        Close_Price,
+        CASE 
+            WHEN CLOSE_PRICE > 100 THEN 'STOCK_HIGH' 
+            ELSE 'STOCK_LOW' 
+        END as Synthetic_Symbol
+    FROM RAW_STOCK_DATA
+)
+SELECT 
+    DATE_VAL,
+    Synthetic_Symbol,
+    CLOSE_PRICE,
+    (CLOSE_PRICE - LAG(CLOSE_PRICE) OVER (PARTITION BY Synthetic_Symbol ORDER BY DATE_VAL)) 
+    / LAG(CLOSE_PRICE) OVER (PARTITION BY Synthetic_Symbol ORDER BY DATE_VAL) as Daily_Return
+FROM Tagged_Data
+ORDER BY DATE_VAL;
 ```
 
 ## Sample Output
