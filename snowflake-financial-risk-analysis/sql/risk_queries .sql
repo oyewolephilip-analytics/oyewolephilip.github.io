@@ -2,7 +2,6 @@
 
 -- Daily Return Calculations
 
-CREATE OR REPLACE VIEW VW_DAILY_RETURNS AS
 SELECT 
     DATE_VAL,
     CLOSE_PRICE,
