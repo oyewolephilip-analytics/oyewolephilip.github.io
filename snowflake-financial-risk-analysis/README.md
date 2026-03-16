@@ -47,7 +47,7 @@ FROM RAW_STOCK_DATA;
 
 ## Sample Output
 
-![Snowflake Risk Analysis](snowflake-risk-analysis.png)
+![Snowflake Risk Analysis](snowflake-risk-analysis.png.jpeg)
 
 ## Key Insight
 
