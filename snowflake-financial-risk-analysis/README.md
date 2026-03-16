@@ -43,8 +43,8 @@ LAG(CLOSE_PRICE)
 OVER (PARTITION BY SYMBOL ORDER BY DATE_VAL)
 AS DAILY_RETURN
 FROM RAW_STOCK_DATA;
+```
 
-```markdown
 ## Sample Output
 
 ![Snowflake Risk Analysis](images/snowflake-risk-analysis.png)
